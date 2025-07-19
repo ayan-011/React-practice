@@ -6,7 +6,7 @@ const Card7 = () => {
 
          const increament =   useCallback(()=>{
              setCount(count + 1)   
-       } ,[count])
+       } ,[count]) 
     
          const decreament =   useCallback(()=>{
            setCount(count - 1)   
@@ -15,9 +15,9 @@ const Card7 = () => {
          let message = ""
 
          if( count %2 ==0 ){
-            message = `${count} : is Even `
+            message = `${count}: is Even `
          }else{
-             message =` ${count} : is Odd ` 
+             message =` ${count}: is Odd ` 
          }
 
         
