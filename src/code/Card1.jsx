@@ -15,8 +15,8 @@ return (
     <div>
         <p className='text-white'>{count}</p>
         <div className='flex gap-5 text-white mt-9'>
-       <button onClick={increament} className='bg-zinc-600 p-2 rounded'>Increament</button>
        <button onClick={decreament} className='bg-zinc-600 p-2 rounded'>Decreament</button>
+       <button onClick={increament} className='bg-zinc-600 p-2 rounded'>Increament</button>
 
         </div>
     </div>  

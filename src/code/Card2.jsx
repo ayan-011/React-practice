@@ -4,9 +4,9 @@ const CardSwitcher = () => {
   const [activeCard, setActiveCard] = useState('card1'); // default is card1
 
   return (
-    <div className="flex flex-col items-center p-4">
+    <div className="flex flex-col items-center p-4 gap-5">
       {/* Buttons */}
-      <div className="mb-4 space-x-4">
+      <div className="md:mb-4 md:space-x-4 gap-x-3 flex">
         <button
           className="text-white bg-zinc-500 px-4 py-2 rounded"
           onClick={() => setActiveCard('card1')}
