@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 
 const Card9 = () => {
    const [otp, setOtp] = useState(["", "", "", "", ""]); //or useState(new Array(5).fill(""));
-  const inputsRef = useRef([]);
+  const inputsRef = useRef([]);//This is a way to directly control each input box .
 
   const handleChange = (element, index) => {
     const value = element.value.replace(/\D/, ''); // Only digits
