@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 
 const Card9 = () => {
-   const [otp, setOtp] = useState(new Array(5).fill("")); //or useState(new Array(5).fill(""));
+   const [otp, setOtp] = useState(["", "", "", "", ""]); //or useState(new Array(5).fill(""));
   const inputsRef = useRef([]);
 
   const handleChange = (element, index) => {
