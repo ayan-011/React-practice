@@ -9,13 +9,13 @@ const Card9 = () => {
     const value = element.value.replace(/\D/, ''); // Only digits
     if (!value) return;
 
-    const newOtp = [...otp];
-    newOtp[index] = value;
-    setOtp(newOtp);
+    const newOtp = [...otp];  // make a copy
+    newOtp[index] = value;    // update the current box
+    setOtp(newOtp);           // save the new state
 
     // Move to next input
     if (index < 4) {
-      inputsRef.current[index + 1].focus();
+      inputsRef.current[index + 1].focus();  // move to next box
     }
 
     // Auto-submit when full
