@@ -7,6 +7,13 @@ const Card9 = () => {
 
   const handleChange = (element, index) => {
     const value = element.value.replace(/\D/, ''); // Only digits
+     // ✅ Use for loop to keep only digits
+    // for (let i = 0; i < input.length; i++) {
+    //   const char = input[i];
+    //   if (char >= '0' && char <= '9') {
+    //     value += char;
+    //   }
+    // }
     if (!value) return;
 
     const newOtp = [...otp];  // make a copy
