@@ -52,7 +52,7 @@ console.log("otp send successfully", otp)
         
         <div className=''>
             <div className="flex wifull  justify-center">
-            <p className='text-white flex gap-2'  >Enter OTP sent to :  <p className='underline text-blue-600'>  { phoneNumber}</p> </p>
+            <div className='text-white flex gap-2'  >Enter OTP sent to :  <p className='underline text-blue-600'>  { phoneNumber}</p> </div>
             </div>
           
           <OtpInput length={4} onSubmit={onOtpSubmit}/>

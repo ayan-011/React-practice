@@ -16,7 +16,7 @@ function TodoApp() {
 
   // 2. useEffect to update `currentTodo` based on `selectedTodoId`
   useEffect(() => {
-    console.log(`useEffect running for todo ID: ${selectedTodoId}`);
+    // console.log(`useEffect running for todo ID: ${selectedTodoId}`);
     // Find the todo that matches the selectedTodoId
     const foundTodo = allTodos.find(todo => todo.id === selectedTodoId);
     setCurrentTodo(foundTodo);
