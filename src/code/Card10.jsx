@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Card10 = () => {
     const [phoneNumber, setPhoneNumber] = useState(" ")
@@ -26,7 +26,7 @@ const Card10 = () => {
       
     const onOtpSubmit = (otp) => {
 
-console.log("otp send successfully")
+console.log("otp send successfully", otp)
     }
 
 
@@ -68,12 +68,34 @@ export default Card10
 
 
 
-export const OtpInput  = (length=4, onOtpSubmit= ()=>{}) =>{
+export const OtpInput  = (length = 4, onOtpSubmit= ()=>{}) =>{
 
     const [otp, setOtp] = useState(["", "", "", ""])
 
-    const handleChange =()=>{
+    const inputRefs = useRef([]) //auto focus on first idex, without click (for fast login)
 
+    useEffect(()=>{
+      if(inputRefs.current[0]){
+        inputRefs.current[0].focus()
+      }
+    })
+
+    const handleChange =(index, e)=>{
+
+      const value = e.target.value  
+
+      if(isNaN(value)) return; //just return not do anything.
+      
+      const newOtp = [...otp]
+      
+      //Allow only one input
+      newOtp[index]= value.substring(value.length-1)
+      setOtp(newOtp)
+              
+      //submit trigger
+      const combinedOtp = newOtp.join('')
+      console.log(newOtp, combinedOtp)
+      if(combinedOtp.length === length) onOtpSubmit(combinedOtp)
     }
     const handleClick =()=>{
 
@@ -89,6 +111,7 @@ export const OtpInput  = (length=4, onOtpSubmit= ()=>{}) =>{
                 otp.map((value, index)=>{
                  
                     return <input type="text"
+                    ref={(input) => (inputRefs.current[index] = input)}
                     key={index}
                     value={value}
                     onChange={(e)=> handleChange(index, e)}
@@ -103,3 +126,8 @@ export const OtpInput  = (length=4, onOtpSubmit= ()=>{}) =>{
            </div>
     )
 }
+
+
+
+
+ 
