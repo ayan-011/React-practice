@@ -20,7 +20,7 @@ const Card8 = () => {
       />
       <button
         onClick={handleSubmit}
-        className="text-black cursor-pointer p-2 bg-white w-fit rounded"
+        className="text-black cursor-pointer p-2 bg-white w-fit rounded hover:bg-black hover:text-white transition-all duration-75"
       >
         Submit
       </button>

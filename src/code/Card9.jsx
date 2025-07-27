@@ -56,7 +56,7 @@ const Card9 = () => {
           type="text"
           inputMode="numeric"
           maxLength={1}
-          className="w-12 h-12 text-center border-2 rounded text-xl focus:outline-none focus:ring-2 ring-blue-400"
+          className="w-12 h-12 text-center border-2 rounded text-xl focus:outline-none focus:ring-2 ring-blue-400 text-white"
           value={digit}
           onChange={(e) => handleChange(e.target, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}

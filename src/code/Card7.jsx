@@ -13,11 +13,11 @@ const Card7 = () => {
             <div className={`color bg-red-90 w-full h-full rounded-md   ${changer}`}></div>
          </div>
          <div className="  flex justify-between md:px-9   py-2 md:p-2  bg-red-0">
-            <button onClick={()=> setChanger('bg-red-900')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  '> Red</button>
-            <button  onClick={()=> setChanger('bg-blue-950')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  '>Blue</button>
-            <button  onClick={()=> setChanger('bg-green-900')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  '>Green</button>
-            <button  onClick={()=> setChanger('bg-zinc-900')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  '>Zinc</button>
-            <button  onClick={()=> setChanger(' ')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  '>Default</button>
+            <button onClick={()=> setChanger('bg-red-900')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  hover:text-red-600'> Red</button>
+            <button  onClick={()=> setChanger('bg-blue-950')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer hover:text-blue-600 '>Blue</button>
+            <button  onClick={()=> setChanger('bg-green-900')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  hover:text-green-600'>Green</button>
+            <button  onClick={()=> setChanger('bg-zinc-900')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer  hover:text-zinc-600'>Zinc</button>
+            <button  onClick={()=> setChanger(' ')} className='p-1 bg-black text-white rounded-md md:px-2 cursor-pointer   '>Default</button>
          </div>
     </div>
 
