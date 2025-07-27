@@ -94,8 +94,13 @@ export const OtpInput  = (length = 4, onOtpSubmit= ()=>{}) =>{
               
       //submit trigger
       const combinedOtp = newOtp.join('')
-      console.log(newOtp, combinedOtp)
+      // console.log(newOtp, combinedOtp)
       if(combinedOtp.length === length) onOtpSubmit(combinedOtp)
+
+        //move to the next input after type.
+        if(value && index<length-1 && inputRefs.current[index + 1]){
+          inputRefs.current[index + 1].focus();
+        }
     }
     const handleClick =()=>{
 
