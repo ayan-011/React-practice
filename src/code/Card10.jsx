@@ -50,6 +50,7 @@ const Card10 = () => {
 
       </form > :
 
+// otherwise
         <div className=''>
           <div className="flex wifull  justify-center">
             <div className='text-white flex gap-2'  >Enter OTP sent to :  <p className='underline text-blue-600'>  {phoneNumber}</p> </div>
