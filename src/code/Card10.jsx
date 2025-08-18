@@ -57,7 +57,7 @@ const Card10 = () => {
           </div>
 
          <OtpInput length={4} onOtpSubmit={onOtpSubmit} />     
-        </div>
+        </div> 
 
       }
     </div>
@@ -68,7 +68,7 @@ export default Card10
 
 
 
-export const OtpInput = (length = 4, onOtpSubmit = () => { }) => {
+export const OtpInput = ({length = 4, onOtpSubmit = () => {}}) => {
 
   const [otp, setOtp] = useState(["", "", "", ""])
 
@@ -81,6 +81,9 @@ export const OtpInput = (length = 4, onOtpSubmit = () => { }) => {
   }, [])
 
   const handleChange = (index, e) => {
+
+
+    // if (!/^\d?$/.test(value)) return; // Only allow a single digit (0-9)
 
     const value = e.target.value
 
@@ -111,9 +114,50 @@ export const OtpInput = (length = 4, onOtpSubmit = () => { }) => {
     }
 
   }
-  const handleKeyDown = () => {
 
+  const handleKeyDown = (index, e) => {
+    if (
+      e.key === "Backspace" &&
+      !otp[index] &&
+      index > 0 &&
+      inputRefs.current[index - 1]
+    ) {
+      // Move focus to the previous input field on backspace
+      inputRefs.current[index - 1].focus();
+    }
+
+
+ if (e.key === "Delete") {
+    // Clear current value
+    const newOtp = [...otp];
+    newOtp[index] = "";
+    setOtp(newOtp);
+
+    // Optional: move to next input if needed
+    if (index < otp.length - 1 && inputRefs.current[index + 1]) {
+      inputRefs.current[index + 1].focus();
+    }
   }
+
+  };
+
+// Paste Otp
+   const handlePaste = (e) => {
+    e.preventDefault();
+    const paste = e.clipboardData.getData('text').replace(/\D/g, ''); // Digits only
+    if (paste) {
+      const pasteArray = paste.split('').slice(0, length);
+      const newOtp = [...otp];
+      for (let i = 0; i < pasteArray.length; i++) {
+        newOtp[i] = pasteArray[i];
+      }
+      setOtp(newOtp);
+      if (inputRefs.current[pasteArray.length - 1]) {
+        inputRefs.current[pasteArray.length - 1].focus();
+      }
+    }
+  };
+
 
   return (
     <div className='w-full flex justify-center py-10'>
@@ -129,6 +173,7 @@ export const OtpInput = (length = 4, onOtpSubmit = () => { }) => {
                 onChange={(e) => handleChange(index, e)}
                 onClick={() => handleClick(index)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
+                 onPaste={handlePaste}
     
                 className='otpInput bg-zinc-950  text-white p-3 w-12 ml-2  '
               />

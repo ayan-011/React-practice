@@ -10,6 +10,8 @@ import "./App.css";
 import Card8 from './code/Card8';
 import Card9 from './code/Card9';
 import Card10 from './code/Card10';
+import Card11 from './code/Card11';
+import Card12 from './code/Card12';
 
 export const App = () => {
   return (
@@ -71,6 +73,16 @@ export const App = () => {
       <div className="bg-zinc-900 rounded-xl p-4 shadow h-[360px] flex flex-col gap-y-6">
         <div className="w-full flex justify-center text-zinc-400">Card 10</div>
         <Card10/>
+      </div>
+      <div className="bg-zinc-900 rounded-xl p-4 shadow h-[360px] flex flex-col gap-y-6">
+        <div className="w-full flex justify-center text-zinc-400">Card 11</div>
+        <div className="w-full flex justify-center text-zinc-400">It shows the cursor coordinates</div>
+        <Card11/>
+      </div>
+      <div className="bg-zinc-900 rounded-xl p-4 shadow h-[360px] flex flex-col gap-y-6">
+        <div className="w-full flex justify-center text-zinc-400">Card 12</div>
+        <div className="w-full flex justify-center text-zinc-400"> </div>
+        <Card12/>
       </div>
 
 
