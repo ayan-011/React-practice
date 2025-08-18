@@ -5,11 +5,11 @@
 
     useEffect(()=>{
         setTimeout(()=>{
-         setDebounce(value)
+         setDebounceValue(value)
         }, timeout)
 
     }, [value])
-    return debounce
+    return debounceValue   
     
  }
  
@@ -25,3 +25,9 @@
  }
  
  export default Experimnt
+
+
+
+
+
+ 

@@ -61,7 +61,7 @@ export default function Card12() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex flex-col items-center mt-10 text-white">
       <input
         type="text"
         value={query}

@@ -12,10 +12,27 @@ import Card9 from './code/Card9';
 import Card10 from './code/Card10';
 import Card11 from './code/Card11';
 import Card12 from './code/Card12';
+ 
+import { Link } from 'react-router';
+
+
 
 export const App = () => {
+
+ 
   return (
+
+    
+  <>
+  
+      <div className="w-full p-5 flex justify-end bg-black"> 
+         <Link to="/experimnt">
+          <button className='p-2 px-5 bg-zinc-800 rounded text-sm text-center cursor-pointer text-white hover:text-blue-400'>experiment</button>
+         </Link>
+      </div>
+
     <div className="bg-black p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
 
       {/* Card 1 */}
       <div className="bg-zinc-900 rounded-xl p-4 shadow h-[360px] flex flex-col gap-y-6">
@@ -87,5 +104,7 @@ export const App = () => {
 
 
     </div>
+
+      </>
   );
 }

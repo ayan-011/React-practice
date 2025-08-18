@@ -42,7 +42,7 @@ const Card11 = () => {
     const MouseMove = useMouseMove()
     const TimeInterval = useTimeInterval()
   return (
-    <div className='flex flex-col gap-9'>
+    <div className='flex flex-col gap-9 text-white'>
         <div className=""> seconds: {TimeInterval}</div>
        
         your position is x: {MouseMove.x} , y: {MouseMove.y} 
